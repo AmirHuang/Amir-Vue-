@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Amir之Vue的学习之路</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+<div id="root">
+    {{fullname}}
+</div>
+<script>
+    var vm = new Vue({
+        el: "#root",
+        data: {
+            firstname: 'Dell',
+            lastname: 'Lee',
+            age: 28
+        },
+
+        // 计算属性 有缓存特点 虽然是个方法，但是当成属性使用
+        computed: {
+            fullname: {
+                get: function () {
+                    return this.firstname + this.lastname
+                },
+                set: function (value) {
+                    console.log(value);
+                }
+            }
+        }
+    })
+</script>
+</body>
+</html>

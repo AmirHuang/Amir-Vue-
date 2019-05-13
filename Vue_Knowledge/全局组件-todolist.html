@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-if,v-show,v-for</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+<div id="root">
+    <div>
+        <input type="text" v-model="todovalue">
+        <button @click="handlebutclick">提交</button>
+    </div>
+    <ul>
+        <todoitem :content="item"
+                  v-for="(item,index) of list"
+                  :index="index"
+                  @delete="handledelete">
+        </todoitem>
+        <!--“v-on: ”  的缩写：“@”-->
+        <!--“v-bind:” 的缩写：“：”-->
+    </ul>
+
+</div>
+<script>
+    // 全局组件
+    // Vue.component('todolist', {
+    //     props: [],
+    //     template: '<li></li>'
+    // });
+
+    // 局部组件
+    var todoitem = {
+        props: ['content', 'index'],
+        template: '<li @click="handleitemclick">{{content}}</li>',
+        methods: {
+            handleitemclick: function () {
+                this.$emit('delete', this.index)
+            }
+        }
+    };
+
+    var vm = new Vue({
+        el: "#root",
+        components: {
+            todoitem: todoitem
+        },
+        data: {
+            todovalue: '',
+            list: []
+        },
+        methods: {
+            handlebutclick: function () {
+                this.list.push(this.todovalue);
+                this.todovalue = ''
+            },
+            handledelete: function (index) {
+                this.list.splice(index, 1)
+            }
+        }
+    })
+</script>
+</body>
+</html>

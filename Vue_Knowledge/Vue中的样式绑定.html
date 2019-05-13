@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Amir之Vue的学习之路</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <div :style="[styleobj, {fontSize: '80px'}]"
+             @click="handleclick">
+            hello world
+        </div>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: "#root",
+            data: {
+                styleobj: {
+                    color: 'black'
+                }
+            },
+            methods: {
+                handleclick: function () {
+                    this.styleobj.color = this.styleobj.color === 'black' ? 'red' : 'black'
+                }
+            }
+        })
+    </script>
+</body>
+</html>
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+    <!--<meta charset="UTF-8">-->
+    <!--<title>Amir之Vue的学习之路</title>-->
+    <!--<script src="./vue.js"></script>-->
+<!--</head>-->
+<!--<body>-->
+    <!--<div id="root">-->
+        <!--<div @click="handleclick"-->
+             <!--:class="{activated: isactivated}">-->
+            <!--hello world-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<script>-->
+        <!--var vm = new Vue({-->
+            <!--el: "#root",-->
+            <!--data: {-->
+                <!--isactivated: false-->
+            <!--},-->
+            <!--methods: {-->
+                <!--handleclick: function () {-->
+                    <!--this.isactivated = !this.isactivated-->
+                <!--}-->
+            <!--}-->
+        <!--})-->
+    <!--</script>-->
+<!--</body>-->
+<!--</html>-->
+
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+    <!--<meta charset="UTF-8">-->
+    <!--<title>Amir之Vue的学习之路</title>-->
+    <!--<script src="./vue.js"></script>-->
+<!--</head>-->
+<!--<body>-->
+    <!--<div id="root">-->
+        <!--<div @click="handleclick"-->
+             <!--:class='[activated]'>-->
+            <!--hello world-->
+        <!--</div>-->
+        <!--&lt;!&ndash;当 :class=后面是一个数组的时候 数组里面的是一个变量&ndash;&gt;-->
+    <!--</div>-->
+    <!--<script>-->
+        <!--var vm = new Vue({-->
+            <!--el: "#root",-->
+            <!--data: {-->
+                <!--activated: ''-->
+            <!--},-->
+            <!--methods: {-->
+                <!--handleclick: function () {-->
+                    <!--// 三元-->
+                    <!--this.activated = this.activated === 'activated' ? '': 'activated'-->
+
+                    <!--// if (this.activated === 'activated') {-->
+                    <!--//     this.activated = '';-->
+                    <!--// }else {-->
+                    <!--//     this.activated = 'activated';-->
+                    <!--// }-->
+                <!--}-->
+            <!--}-->
+        <!--})-->
+    <!--</script>-->
+<!--</body>-->
+<!--</html>-->
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+    <!--<meta charset="UTF-8">-->
+    <!--<title>Amir之Vue的学习之路</title>-->
+    <!--<script src="./vue.js"></script>-->
+<!--</head>-->
+<!--<body>-->
+    <!--<div id="root">-->
+        <!--<div :style="styleobj"-->
+             <!--@click="handleclick">-->
+            <!--hello world-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<script>-->
+        <!--var vm = new Vue({-->
+            <!--el: "#root",-->
+            <!--data: {-->
+                <!--styleobj: {-->
+                    <!--color: 'black'-->
+                <!--}-->
+            <!--},-->
+            <!--methods: {-->
+                <!--handleclick: function () {-->
+                    <!--this.styleobj.color = this.styleobj.color === 'black' ? 'red' : 'black'-->
+                <!--}-->
+            <!--}-->
+        <!--})-->
+    <!--</script>-->
+<!--</body>-->
+<!--</html>-->
+
+
+<!--&lt;!&ndash;<!DOCTYPE html>&ndash;&gt;-->
+<!--&lt;!&ndash;<html lang="en">&ndash;&gt;-->
+<!--&lt;!&ndash;<head>&ndash;&gt;-->
+    <!--&lt;!&ndash;<meta charset="UTF-8">&ndash;&gt;-->
+    <!--&lt;!&ndash;<title>Amir之Vue的学习之路</title>&ndash;&gt;-->
+    <!--&lt;!&ndash;<script src="./vue.js"></script>&ndash;&gt;-->
+<!--&lt;!&ndash;</head>&ndash;&gt;-->
+<!--&lt;!&ndash;<body>&ndash;&gt;-->
+    <!--&lt;!&ndash;<div id="root">&ndash;&gt;-->
+        <!--&lt;!&ndash;<div @click="handleclick"&ndash;&gt;-->
+             <!--&lt;!&ndash;:class="{activated: isactivated}">&ndash;&gt;-->
+            <!--&lt;!&ndash;hello world&ndash;&gt;-->
+        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+    <!--&lt;!&ndash;<script>&ndash;&gt;-->
+        <!--&lt;!&ndash;var vm = new Vue({&ndash;&gt;-->
+            <!--&lt;!&ndash;el: "#root",&ndash;&gt;-->
+            <!--&lt;!&ndash;data: {&ndash;&gt;-->
+                <!--&lt;!&ndash;isactivated: false&ndash;&gt;-->
+            <!--&lt;!&ndash;},&ndash;&gt;-->
+            <!--&lt;!&ndash;methods: {&ndash;&gt;-->
+                <!--&lt;!&ndash;handleclick: function () {&ndash;&gt;-->
+                    <!--&lt;!&ndash;this.isactivated = !this.isactivated&ndash;&gt;-->
+                <!--&lt;!&ndash;}&ndash;&gt;-->
+            <!--&lt;!&ndash;}&ndash;&gt;-->
+        <!--&lt;!&ndash;})&ndash;&gt;-->
+    <!--&lt;!&ndash;</script>&ndash;&gt;-->
+<!--&lt;!&ndash;</body>&ndash;&gt;-->
+<!--&lt;!&ndash;</html>&ndash;&gt;-->
+
+
+
+
+<!--&lt;!&ndash;<!DOCTYPE html>&ndash;&gt;-->
+<!--&lt;!&ndash;<html lang="en">&ndash;&gt;-->
+<!--&lt;!&ndash;<head>&ndash;&gt;-->
+    <!--&lt;!&ndash;<meta charset="UTF-8">&ndash;&gt;-->
+    <!--&lt;!&ndash;<title>Amir之Vue的学习之路</title>&ndash;&gt;-->
+    <!--&lt;!&ndash;<script src="./vue.js"></script>&ndash;&gt;-->
+<!--&lt;!&ndash;</head>&ndash;&gt;-->
+<!--&lt;!&ndash;<body>&ndash;&gt;-->
+    <!--&lt;!&ndash;<div id="root">&ndash;&gt;-->
+        <!--&lt;!&ndash;<div @click="handleclick"&ndash;&gt;-->
+             <!--&lt;!&ndash;:class='[activated]'>&ndash;&gt;-->
+            <!--&lt;!&ndash;hello world&ndash;&gt;-->
+        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+        <!--&lt;!&ndash;&lt;!&ndash;当 :class=后面是一个数组的时候 数组里面的是一个变量&ndash;&gt;&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+    <!--&lt;!&ndash;<script>&ndash;&gt;-->
+        <!--&lt;!&ndash;var vm = new Vue({&ndash;&gt;-->
+            <!--&lt;!&ndash;el: "#root",&ndash;&gt;-->
+            <!--&lt;!&ndash;data: {&ndash;&gt;-->
+                <!--&lt;!&ndash;activated: ''&ndash;&gt;-->
+            <!--&lt;!&ndash;},&ndash;&gt;-->
+            <!--&lt;!&ndash;methods: {&ndash;&gt;-->
+                <!--&lt;!&ndash;handleclick: function () {&ndash;&gt;-->
+                    <!--&lt;!&ndash;// 三元&ndash;&gt;-->
+                    <!--&lt;!&ndash;this.activated = this.activated === 'activated' ? '': 'activated'&ndash;&gt;-->
+
+                    <!--&lt;!&ndash;// if (this.activated === 'activated') {&ndash;&gt;-->
+                    <!--&lt;!&ndash;//     this.activated = '';&ndash;&gt;-->
+                    <!--&lt;!&ndash;// }else {&ndash;&gt;-->
+                    <!--&lt;!&ndash;//     this.activated = 'activated';&ndash;&gt;-->
+                    <!--&lt;!&ndash;// }&ndash;&gt;-->
+                <!--&lt;!&ndash;}&ndash;&gt;-->
+            <!--&lt;!&ndash;}&ndash;&gt;-->
+        <!--&lt;!&ndash;})&ndash;&gt;-->
+    <!--&lt;!&ndash;</script>&ndash;&gt;-->
+<!--&lt;!&ndash;</body>&ndash;&gt;-->
+<!--&lt;!&ndash;</html>&ndash;&gt;-->
